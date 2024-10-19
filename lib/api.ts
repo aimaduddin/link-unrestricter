@@ -94,10 +94,7 @@ export async function getTorrents(page: number, limit: number = 10) {
       },
     });
 
-    return {
-      torrents: response.data,
-      totalCount: parseInt(response.headers['x-total-count'] || '0', 10),
-    };
+    return response.data;
   } catch (error) {
     console.error('Error fetching torrents:', error);
     throw error;
